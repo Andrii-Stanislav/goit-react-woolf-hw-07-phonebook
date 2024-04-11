@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`fetchContacts test fetchContacts1 1`] = `
+Array [
+  "(+176)-526-3525",
+  "(+176)-526-3523",
+]
+`;

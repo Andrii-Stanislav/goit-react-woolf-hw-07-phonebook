@@ -1,0 +1,10 @@
+{
+  "projects": {
+    "default": "contacts-ui-c98d1"
+  },
+  "targets": {
+    "contacts-ui-c98d1": {
+      "hosting": "contacts-ui-c98d1"
+    }
+  }
+}
