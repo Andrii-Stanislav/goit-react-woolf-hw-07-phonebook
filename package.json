@@ -2,7 +2,7 @@
   "name": "contacts-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/Andrii-Stanislav/goit-react-woolf-hw-07-phonebook",
+  "homepage": "https://github.com/Andrii-Stanislav/goit-react-woolf-hw-07-phonebook/",
   "dependencies": {
     "@babel/preset-env": "^7.18.9",
     "@babel/preset-typescript": "^7.16.7",
@@ -41,10 +41,10 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "jest",
     "react-test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "npm run build"
+    "predeploy": "npm run build",
+    "test": "react-scripts test"
   },
   "eslintConfig": {
     "extends": [
