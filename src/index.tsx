@@ -11,7 +11,7 @@ import './styles/index.css';
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <BrowserRouter>
+      <BrowserRouter basename="/goit-react-woolf-hw-07-phonebook">
         <App />
       </BrowserRouter>
     </Provider>
