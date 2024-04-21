@@ -20,7 +20,8 @@
     "declaration": true,
     "declarationMap": true,
     "useUnknownInCatchVariables": false,
-    "verbatimModuleSyntax": false
+    "verbatimModuleSyntax": false,
+    "baseUrl": "src"
   },
   "include": ["src"]
 }
