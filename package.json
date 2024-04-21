@@ -2,7 +2,7 @@
   "name": "contacts-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Andrii-Stanislav.github.io/goit-react-woolf-hw-07-phonebook/",
+  "homepage": "https://andrii-stanislav.github.io/goit-react-woolf-hw-07-phonebook/",
   "dependencies": {
     "@babel/preset-env": "^7.18.9",
     "@babel/preset-typescript": "^7.16.7",
