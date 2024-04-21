@@ -13,7 +13,7 @@ const getContactsLength = (state: StoreType) => getContacts(state)?.length;
 const getFilteredContacts = createSelector(
   [getContacts, getFilter],
   (contacts, filter) =>
-    contacts.filter(
+    (contacts ?? []).filter(
       ({ name }) => name && name.toLowerCase().includes(filter.toLowerCase()),
     ),
 );

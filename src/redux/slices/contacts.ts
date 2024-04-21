@@ -16,7 +16,7 @@ export const contactsSlice = createSlice({
     fetchContactRequest: state => ({ ...state, loading: true }),
     fetchContactSuccess: (state, action: Action<T.ContactsListRes>) => ({
       ...state,
-      contacts: action.payload.data,
+      contacts: action.payload,
       loading: false,
     }),
     fetchContactError: (state, action: Action<T.ApiError>) => ({
@@ -29,7 +29,7 @@ export const contactsSlice = createSlice({
     createContactSuccess: (state, action: Action<T.ContactRes>) => ({
       ...state,
       loading: false,
-      contacts: [...state.contacts, action.payload.data],
+      contacts: [...state.contacts, action.payload],
     }),
     createContactError: (state, action: Action<T.ApiError>) => ({
       ...state,
@@ -43,7 +43,7 @@ export const contactsSlice = createSlice({
       loading: false,
       contacts: [
         ...state.contacts.map(contact =>
-          contact.id === action.payload.data.id ? action.payload.data : contact,
+          contact.id === action.payload.id ? action.payload : contact,
         ),
       ],
     }),

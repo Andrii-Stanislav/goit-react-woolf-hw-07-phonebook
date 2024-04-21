@@ -47,14 +47,12 @@ export type EditContact = {
 
 export type Contact = {
   id: string;
-  _id: string;
   createdAt: string;
   favorite: boolean;
   name: string;
   owner: string;
   phone: string;
-  updatedAt: string;
 };
 
-export type ContactRes = ApiResponse<Contact>;
-export type ContactsListRes = ApiResponse<Contact[]>;
+export type ContactRes = Contact;
+export type ContactsListRes = Contact[];

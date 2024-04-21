@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-
 import {
   Box,
   Collapse,
@@ -14,7 +13,7 @@ import { Close, Delete } from '@mui/icons-material';
 
 import { deleteContact } from '../../redux/operations/contacts';
 
-import EditModal from '../EditModal';
+import { EditModal } from '../EditModal';
 
 type Props = {
   id: string;
@@ -22,7 +21,7 @@ type Props = {
   phone: string;
 };
 
-export default function Contact({ id, name, phone }: Props) {
+export function Contact({ id, name, phone }: Props) {
   const [isConfirmDelete, setIsConfirmDelete] = useState(false);
 
   const dispatch = useDispatch();

@@ -4,9 +4,9 @@ import { Box, Typography } from '@mui/material';
 
 import { getFilteredContacts } from '../../redux/selectors';
 
-import Contact from '../Contact';
+import { Contact } from '../Contact';
 
-export default function ContactList() {
+export function ContactList() {
   const contacts = useSelector(getFilteredContacts);
 
   return (

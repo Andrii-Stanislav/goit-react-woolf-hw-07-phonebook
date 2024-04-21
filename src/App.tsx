@@ -1,19 +1,15 @@
-import { useEffect, Suspense, lazy } from 'react';
-import { Switch, Redirect } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { Suspense, lazy } from 'react';
+import { Switch, Route, Redirect } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import { Box, GlobalStyles, styled } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-import Pages from './constants/pages';
-import { getCurrentUser } from './redux/operations/auth';
+import { Pages } from './constants/pages';
 import { getDarkTheme } from './redux/selectors';
 
-import PrivateRoute from './components/PrivateRoute';
-import PublicRoute from './components/PublicRoute';
-import AppBar from './components/AppBar';
-import Container from './components/Container';
-import Loading from './components/Loading';
-import Pnotify from './components/Pnotify';
+import { AppBar } from './components/AppBar';
+import { Container } from './components/Container';
+import { Loading } from './components/Loading';
 
 const HomePage = lazy(
   () => import('./pages/HomePage' /* webpackChunkName: "home-page-view" */),
@@ -24,12 +20,6 @@ const Docks = lazy(
 const Contacts = lazy(
   () => import('./pages/Contacts' /* webpackChunkName: "contacts-view" */),
 );
-const LoginPage = lazy(
-  () => import('./pages/LoginPage' /* webpackChunkName: "login-view" */),
-);
-const Register = lazy(
-  () => import('./pages/Register' /* webpackChunkName: "register-view" */),
-);
 
 const muiTheme = createTheme({
   typography: {
@@ -38,12 +28,7 @@ const muiTheme = createTheme({
 });
 
 export default function App() {
-  const dispatch = useDispatch();
   const darkTheme = useSelector(getDarkTheme);
-
-  useEffect(() => {
-    dispatch(getCurrentUser());
-  }, [dispatch]);
 
   return (
     <ThemeProvider theme={muiTheme}>
@@ -57,35 +42,16 @@ export default function App() {
         <Container>
           <Suspense fallback={<Loading />}>
             <Switch>
-              {/* @ts-ignore */}
-              <PublicRoute exact path={Pages.home} component={HomePage} />
-              {/* @ts-ignore */}
-              <PublicRoute exact path={Pages.docks} component={Docks} />
-              <PrivateRoute
-                path={Pages.contacts}
-                // @ts-ignore
-                component={Contacts}
-                redirectTo={Pages.login}
-              />
-              <PublicRoute
-                path={Pages.login}
-                restricted
-                // @ts-ignore
-                component={LoginPage}
-                redirectTo={Pages.contacts}
-              />
-              <PublicRoute
-                path={Pages.register}
-                restricted
-                // @ts-ignore
-                component={Register}
-                redirectTo={Pages.contacts}
-              />
-              <Redirect to={Pages.docks} />
+              <Route exact path={Pages.home} component={HomePage} />
+
+              <Route exact path={Pages.docks} component={Docks} />
+
+              <Route path={Pages.contacts} component={Contacts} />
+
+              <Redirect to={Pages.home} />
             </Switch>
           </Suspense>
           <Loading />
-          <Pnotify />
         </Container>
       </StyledApp>
     </ThemeProvider>

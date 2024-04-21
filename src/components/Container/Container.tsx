@@ -23,7 +23,7 @@ const StyledContainer = styled(Box)<{ darkTheme: boolean }>`
 
 type Props = { children: JSX.Element | JSX.Element[] };
 
-export default function Container({ children }: Props) {
+export function Container({ children }: Props) {
   const darkTheme = useSelector(getDarkTheme);
 
   return (

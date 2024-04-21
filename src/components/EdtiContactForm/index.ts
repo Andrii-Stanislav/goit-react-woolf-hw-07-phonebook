@@ -1,1 +1,1 @@
-export { default } from './EdtiContactForm';
+export * from './EdtiContactForm';

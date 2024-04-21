@@ -1,16 +1,11 @@
 import { NavLink } from 'react-router-dom';
-import { useSelector } from 'react-redux';
 
 import { Stack, styled } from '@mui/material';
 
-import UserNav from '../UserNav';
-import ThemeSwitch from '../ThemeSwitch';
-import Pages from '../../constants/pages';
-import { getIsAuthenticated } from '../../redux/selectors';
+import { ThemeSwitch } from '../ThemeSwitch';
+import { Pages } from '../../constants/pages';
 
-export default function AppBarr() {
-  const isAuthenticated = useSelector(getIsAuthenticated);
-
+export function AppBar() {
   return (
     <Stack alignItems="center">
       <Stack
@@ -26,24 +21,10 @@ export default function AppBarr() {
             Home
           </NavigationItem>
 
-          {isAuthenticated && (
-            <NavigationItem data-testid="contacts" to={Pages.contacts}>
-              Contacts
-            </NavigationItem>
-          )}
+          <NavigationItem data-testid="contacts" to={Pages.contacts}>
+            Contacts
+          </NavigationItem>
         </Stack>
-        {isAuthenticated ? (
-          <UserNav />
-        ) : (
-          <Stack direction="row" spacing={2}>
-            <NavigationItem data-testid="login" to={Pages.login} exact>
-              Login
-            </NavigationItem>
-            <NavigationItem data-testid="register" to={Pages.register}>
-              Authorization
-            </NavigationItem>
-          </Stack>
-        )}
 
         <ThemeSwitch />
 

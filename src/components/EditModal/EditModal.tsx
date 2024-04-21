@@ -4,7 +4,7 @@ import { Box, Modal } from '@mui/material';
 import { IconButton, styled } from '@mui/material';
 import { Edit } from '@mui/icons-material';
 
-import EdtiContactForm from '../EdtiContactForm';
+import { EdtiContactForm } from '../EdtiContactForm';
 
 type Props = {
   id: string;
@@ -12,7 +12,7 @@ type Props = {
   number: string;
 };
 
-export default function EditModal({ id, name, number }: Props) {
+export function EditModal({ id, name, number }: Props) {
   const [open, setOpen] = useState(false);
   // const [alert, setAlert] = useState(false);
 

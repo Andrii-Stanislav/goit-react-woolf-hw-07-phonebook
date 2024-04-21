@@ -2,16 +2,12 @@ import { FormEvent, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Button, TextField, Stack } from '@mui/material';
 
-import { PhoneMaskInput } from '../../atoms';
+import { PhoneMaskInput } from '../PhoneMaskInput';
 import { getContacts } from '../../redux/selectors';
 import { createContact } from '../../redux/operations/contacts';
 import type * as TYPES from '../../types';
 
-type Props = {
-  showAlert: () => void;
-};
-
-export default function ContactForm({ showAlert }: Props) {
+export function ContactForm() {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
 
@@ -25,7 +21,6 @@ export default function ContactForm({ showAlert }: Props) {
     let verify = true;
     contacts.forEach(({ name, phone }: TYPES.NewContact) => {
       if (name.toLowerCase() === newName.toLowerCase() || newNumber === phone) {
-        showAlert();
         verify = false;
       }
     });

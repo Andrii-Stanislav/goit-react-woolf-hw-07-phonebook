@@ -5,7 +5,7 @@ import { TextField } from '@mui/material';
 import { getFilter } from '../../redux/selectors';
 import { changeFilter } from '../../redux/slices/filter.actions';
 
-export default function Filter() {
+export function Filter() {
   const value = useSelector(getFilter);
   const dispatch = useDispatch();
 

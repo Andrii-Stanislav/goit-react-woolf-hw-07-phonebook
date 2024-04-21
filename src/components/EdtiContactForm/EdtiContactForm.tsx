@@ -1,7 +1,7 @@
 import { SyntheticEvent, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { PhoneMaskInput } from '../../atoms';
+import { PhoneMaskInput } from '../PhoneMaskInput';
 import { getContacts } from '../../redux/selectors';
 import { editContact } from '../../redux/operations/contacts';
 
@@ -14,12 +14,7 @@ type Props = {
   onCloseModal: () => void;
 };
 
-export default function EdtiContactForm({
-  id,
-  name,
-  number,
-  onCloseModal,
-}: Props) {
+export function EdtiContactForm({ id, name, number, onCloseModal }: Props) {
   const [editName, setName] = useState(name);
   const [editNumber, setNumber] = useState(number);
 
