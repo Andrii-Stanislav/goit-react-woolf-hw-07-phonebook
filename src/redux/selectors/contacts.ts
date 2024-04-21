@@ -2,11 +2,11 @@ import { createSelector } from '@reduxjs/toolkit';
 
 import type { StoreType } from '../store';
 
-const getContacts = (state: StoreType) => state.contacts.contacts;
+const getContacts = (state: StoreType) => state.contacts.items;
 
 const getFilter = (state: StoreType) => state.filter;
 
-const getIsLoadingContacts = (state: StoreType) => state.contacts.loading;
+const getIsLoadingContacts = (state: StoreType) => state.contacts.isLoading;
 
 const getContactsLength = (state: StoreType) => getContacts(state)?.length;
 

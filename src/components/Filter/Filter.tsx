@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { TextField } from '@mui/material';
 
 import { getFilter } from '../../redux/selectors';
-import { changeFilter } from '../../redux/slices/filter.actions';
+import { changeFilter } from '../../redux/slices/filter';
 
 export function Filter() {
   const value = useSelector(getFilter);

@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 
 import { Switch } from '@mui/material';
 
-import { changeTheme } from '../../redux/slices/theme.actions';
+import { changeTheme } from '../../redux/slices/theme';
 
 export function ThemeSwitch() {
   const [darkTheme, setDarkTheme] = useState(false);
